@@ -1,0 +1,36 @@
+ Comparison between Various IPC
+Comparison of IPC
+Pipes
+Advantages
+1) Simplest from of IPC
+2) Can be used in shell
+Disadvantages
+1) Only for related process
+2) No message boundary
+
+FIFO
+Disadvantages
+- Data cannot be broadcasted to multiple receivers
+- If there are multiple receivers there is not way to direct the data to particular user
+- Cannot be used across network
+- Less secure than pipe, since any process with valid access permission can access them
+- Cannot store data
+- No message boundaries. Data is treated as stream of bytes
+Message Queues
+Advantages
+1) can broadcast data ????
+2) can direct data
+3) can store data
+4) message boundaries
+disadvantage
+1) effective for small amount of data
+2) very expensive for large data, as transferred through kernel buffer and double coping
+3) each data transfer involves 2 data copy operations
+4) a message queue cannot be reused, since once the message is taken from the queue , message is removed from message queue.
+Shared memory
+1) faster method than queues
+2) does not require extra kernel buffer
+3) safe, manipulated like other variables
+Disadvantages
+1) data can either read or written only. Append is not possible
+2) race condition is possible so locking is required.

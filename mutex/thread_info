@@ -1,0 +1,18 @@
+Just as a process is identified through a process ID, a thread is identified by a thread ID. But interestingly, the similarity between the two ends here.
+
+    A process ID is unique across the system where as a thread ID is unique only in context of a single process.
+    A process ID is an integer value but the thread ID is not necessarily an integer value. It could well be a structure
+    A process ID can be printed very easily while a thread ID is not easy to print.
+
+
+
+####   COMPARE  2 THREAD ID's   #####=================================================================================================
+
+Thread ID is represented by the type ‘pthread_t’.  As we already discussed that in most of the cases this type is a structure, so there has to be a function that can compare two thread IDs.
+
+#include <pthread.h>
+int pthread_equal(pthread_t tid1, pthread_t tid2);
+
+
+
+
